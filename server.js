@@ -4,7 +4,12 @@ const port = 5000
 const app = express()
 
 app.get('/', (req, res) => {
-  res.send('Daemonium')
+  res.json({
+    message: 'Daemonium API'
+  })
 })
+
+const ideasRouter = require('./routes/ideas')
+app.use('/api/ideas', ideasRouter)
 
 app.listen(port, () => console.log(`Server listening on Port ${port}`))
