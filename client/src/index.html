@@ -3,12 +3,74 @@
 
 <head>
   <meta charset="utf-8">
-  <title><%= htmlWebpackPlugin.options.title %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daemonium</title>
 </head>
 
 <body>
-  <h1><%= htmlWebpackPlugin.options.title %></h1>
-</body>
+    <header>
+      <h1 class="logo-font">Daemonium</h1>
+      <button id="modal-btn">
+        <i class="fa-solid fa-plus fa-2x"></i>
+      </button>
+    </header>
+    <div class="container">
+      <div id="idea-list" class="ideas">
+        <div class="card">
+          <button class="delete"><i class="fas fa-times"></i></button>
+          <h3>
+            A wearable learning band that tracks student wellbeing, adapts lessons in real time, and alerts teachers when support is needed.
+          </h3>
+          <p class="tag tag-technology">TECHNOLOGY</p>
+          <p>
+            Posted on <span class="date">7th July, 2026</span> by
+            <span class="author">Emma Turner</span>
+          </p>
+        </div>
+        <div class="card">
+          <button class="delete"><i class="fas fa-times"></i></button>
+          <h3>
+            An AI-driven pitch generator that analyses market gaps and instantly produces tailored business concepts with prototype mock-ups.
+          </h3>
+          <p class="tag tag-inventions">INVENTIONS</p>
+          <p>
+            Posted on <span class="date">28th June 2026</span> by
+            <span class="author">Mo Ahmed</span>
+          </p>
+        </div>
+        <div class="card">
+          <button class="delete"><i class="fas fa-times"></i></button>
+          <h3>
+            A smart home assistant that monitors daily habits, suggests healthier routines, and integrates with apps to automate wellness goals.
+          </h3>
+          <p class="tag tag-health">HEALTH</p>
+          <p>
+            Posted on <span class="date">15th May 2026</span> by
+            <span class="author">Josh Lancaster</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal" class="modal">
+      <div id="form-modal" class="modal-box">
+        <form id="idea-form">
+          <div class="form-control">
+            <label for="idea-text">Enter a Username</label>
+            <input type="text" name="username" id="username" />
+          </div>
+          <div class="form-control">
+            <label for="idea-text">What's Your Idea?</label>
+            <textarea name="text" id="idea-text"></textarea>
+          </div>
+          <div class="form-control">
+            <label for="tag">Tag</label>
+            <input type="text" name="tag" id="tag" />
+          </div>
+          <button class="btn" type="submit" id="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
 
 </html>

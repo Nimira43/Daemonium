@@ -1,4 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Yellowtail&display=swap');
+
+:root {
+  --main: #5454fc;
+  --main-dark: #1010fe;
+  --main-light: #a4a4fc;
+  --support: #ffd700;
+  --dark: #111;
+  --light: #fcfeff;
+  --grey-1: #333;
+  --grey-2: #999;
+  --grey-3: #ccc;
+  --grey-4: #eee;
+  --grey-5: #f3f3f3;
+  --technology: #fed1c0;
+  --software: #c6c6fa;
+  --business: #e7cafc;
+  --education: #ffffd7;
+  --health: #d4f6d4;
+  --inventions: #f9cbed;
+  --transitioning: all 0.5s ease-in-out;
+  --border-radius: 3px;
+  --main-font: 'Mulish', sans-serif;
+  --logo-font: 'Yellowtail', cursive;
+}
+
+
+/* Global */
+
 body {
-  background: #111;
-  color: #fcfcfc;
+  font-family: var(--main-font);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--grey-1);
+  background-color: var(--grey-5);
+  overflow-x: hidden;
+}
+
+header {
+  padding: 10px 0;
+  text-align: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+#modal-btn {
+  border: none;
+  background: none;
+  color: var(--main);
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+/* Title Logo */
+
+.logo-font {
+  font-family: var(--logo-font);
+  font-size: 2.4rem;
+  color: var(--main);
+}
+
+/* Modal */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-box {
+  margin: 10% auto;
+  width: 600px;
+  background-color: var(--light);
+  color: var(--dark);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+
+@keyframes modalopen {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Form */
+
+form input,
+form textarea {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid var(--grey-3);
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+form textarea {
+  height: 100px;
+}
+
+form label {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+/* Buttons — outline style */
+
+.btn {
+  background-color: transparent;
+  color: var(--dark);
+  border: 2px solid var(--dark);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: inherit;
+  margin-top: 10px;
+  width: 100%;
+  transition: var(--transitioning);
+}
+
+.btn:hover {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+/* Layout */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.ideas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.ideas .card {
+  position: relative;
+  background-color: var(--grey-5);
+  margin: 10px;
+  padding: 20px 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tags */
+
+.tag {
+  display: inline-block;
+  color: var(--dark);
+  font-weight: 400;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.tag-technology {
+  background: var(--technology);
+}
+
+.tag-software {
+  background: var(--software);
+}
+
+.tag-business {
+  background: var(--business);
+}
+
+.tag-education {
+  background: var(--education);
+}
+
+.tag-health {
+  background: var(--health);
+}
+
+.tag-inventions {
+  background: var(--inventions);
+}
+
+/* Delete button */
+
+.delete {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--main-dark);
+  background: none;
+  border: none;
+}
+
+.delete:hover {
+  color: var(--dark);
+}
+
+/* Date */
+
+.date {
+  color: var(--grey-2);
+  font-size: 14px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .modal-box {
+    width: 90%;
+  }
 }
