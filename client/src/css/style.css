@@ -2,22 +2,22 @@
 
 :root {
   --main: #5454fc;
-  --main-dark: #1010fe;
-  --main-light: #a4a4fc;
+  --main-dark: #3b3bab;
+  --main-light: #acacf9;
   --support: #ffd700;
   --dark: #111;
-  --light: #fcfeff;
+  --light: #fefeff;
   --grey-1: #333;
   --grey-2: #999;
   --grey-3: #ccc;
   --grey-4: #eee;
-  --grey-5: #f3f3f3;
-  --technology: #fed1c0;
+  --grey-5: #fdfdfd;
+  --technology: #ffddd1;
   --software: #c6c6fa;
   --business: #e7cafc;
   --education: #ffffd7;
   --health: #d4f6d4;
-  --inventions: #f9cbed;
+  --inventions: #fad3ef;
   --transitioning: all 0.5s ease-in-out;
   --border-radius: 3px;
   --main-font: 'Mulish', sans-serif;
@@ -48,6 +48,7 @@ h3 {
   font-weight: 400;
 }
 
+
 #modal-btn {
   border: none;
   background: none;
@@ -63,6 +64,7 @@ h3 {
 .logo-font {
   font-family: var(--logo-font);
   font-size: 2.4rem;
+  font-weight: lighter;
   color: var(--main);
 }
 
@@ -83,11 +85,11 @@ h3 {
 .modal-box {
   margin: 10% auto;
   width: 600px;
-  background-color: var(--light);
+  background-color: var(--grey-5);
   color: var(--dark);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
 }
@@ -123,8 +125,8 @@ form label {
 
 .btn {
   background-color: transparent;
-  color: var(--dark);
-  border: 2px solid var(--dark);
+  color: var(--main-dark);
+  border: 2px solid var(--main-dark);
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -135,7 +137,7 @@ form label {
 }
 
 .btn:hover {
-  background-color: var(--dark);
+  background-color: var(--main-dark);
   color: var(--light);
 }
 
@@ -208,6 +210,7 @@ form label {
   color: var(--main-dark);
   background: none;
   border: none;
+  transition: var(--transitioning);
 }
 
 .delete:hover {
