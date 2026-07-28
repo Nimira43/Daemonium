@@ -18,6 +18,7 @@
   --education: #ffffd7;
   --health: #d4f6d4;
   --inventions: #fad3ef;
+  --default: #e7e4e1;
   --transitioning: all 0.5s ease-in-out;
   --border-radius: 3px;
   --main-font: 'Mulish', sans-serif;
@@ -168,6 +169,7 @@ form label {
 .tag {
   display: inline-block;
   color: var(--dark);
+  background-color: var(--default);  
   font-weight: 400;
   padding: 5px 10px;
   border-radius: 5px;
@@ -220,7 +222,8 @@ form label {
 /* Date */
 
 .date {
-  color: var(--grey-2);
+  color: var(--main);
+  font-weight: 500;
   font-size: 14px;
 }
 
