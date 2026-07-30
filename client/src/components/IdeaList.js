@@ -1,29 +1,11 @@
+import IdeasApi from '../services/ideasApi'
+
 class IdeaList {
   constructor() {
     this._ideaListEl = document.querySelector('#idea-list')
-    this._ideas = [
-      {
-        id: 1,
-        text: 'Idea 1',
-        tag: 'health',
-        username: 'John',
-        date: '23/08/2026'
-      },
-      {
-        id: 2,
-        text: 'Idea 2',
-        tag: 'technology',
-        username: 'Jill',
-        date: '01/02/2026'
-      },
-      {
-        id: 3,
-        text: 'Idea 3',
-        tag: 'inventions',
-        username: 'Jack',
-        date: '01/03/2026'
-      },
-    ]
+    this._ideas = []
+    this.getIdeas()
+
     this._validTags = new Set()
     this._validTags.add('technology')
     this._validTags.add('software')
@@ -31,6 +13,21 @@ class IdeaList {
     this._validTags.add('education')
     this._validTags.add('health')
     this._validTags.add('inventions')
+  }
+
+  async getIdeas() {
+    try {
+      const res = await IdeasApi.getIdeas()
+      this._ideas = res.data.data
+      this.render()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  addIdeaToList(idea) {
+    this._ideas.push(idea)
+    this.render()
   }
 
   getTagClass(tag) {
